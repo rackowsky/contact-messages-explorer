@@ -1,6 +1,8 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { Link } from "gatsby"
 import bgImg from "../images/bg.png"
 import HeartSymbolImg from "../images/heart.png"
+import listSymbol from "../images/list.png"
 
 export const CreateGlobalStyleElement = createGlobalStyle`
     * {
@@ -35,12 +37,14 @@ export const CreateGlobalStyleElement = createGlobalStyle`
     ::-webkit-scrollbar-track {background: #f1f1f1;}
     ::-webkit-scrollbar-thumb {background: #888;}
     ::-webkit-scrollbar-thumb:hover {background: #555;}
+    ::selection {background-color: #ffffff16}
 `
 export const IndexWrapper = styled.div`
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     animation-duration: 1s;
     animation-name: Scaling;
@@ -99,4 +103,38 @@ export const FormHeader = styled.p`
     font-size: ${({ isUnderHeader }) => isUnderHeader ? '25px' : '36px'};
     margin: 0;
     padding: 0;
+`
+export const ShowListBtn = styled(Link)`
+    height: 60px;
+    width: 300px;
+    margin-top: 20px;
+    backdrop-filter: blur(100px);
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.25);
+
+    :hover {
+        transition: 0.2s;
+        background-color: #ffffff3e;
+        cursor: pointer;
+        transform: scale(1.025);
+    }
+`
+export const ListSymbol = styled.div`
+    background: url( ${ listSymbol } ) no-repeat center/70%;
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+`
+export const P = styled.p`
+    font-size: 17px;
+    font-weight: 900;
+    font-style: italic;
+    margin: 0;
+    color: white;
 `

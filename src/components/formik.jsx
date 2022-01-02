@@ -13,11 +13,23 @@ import {
 const FormikComponent = () => {
     return(
         <Formik
-
+            initialValues={{
+                name: '',
+                message: '',
+            }}
+            onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                    alert(JSON.stringify(values, null, 2));
+                    setSubmitting(false);
+                }, 400);
+            }}
         >
             {({
                 handleSubmit,
+                values,
                 isSubmiting,
+                handleChange,
+                handleBlur,
             }) => (
                 <form onSubmit={ handleSubmit }>
                     <InputWrapper>
@@ -26,6 +38,9 @@ const FormikComponent = () => {
                             type="name"
                             name="name"
                             placeholder="Your name"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.name}
                         />
                     </InputWrapper>
                     <InputWrapper isMessage>
@@ -34,6 +49,9 @@ const FormikComponent = () => {
                             type="message"
                             name="message"
                             placeholder="Your message"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.message}
                         />
                     </InputWrapper>
                     <Button

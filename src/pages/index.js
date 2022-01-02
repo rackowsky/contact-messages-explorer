@@ -10,6 +10,9 @@ import {
   FooterComponent,
   FooterSign,
   HeartSymbol,
+  ShowListBtn,
+  ListSymbol,
+  P,
 } from "../styles/index.styles"
 
 const Index = () => {
@@ -22,6 +25,10 @@ const Index = () => {
           <FormHeader isUnderHeader>Complete the form and wait up to 24 hours for a response.</FormHeader>
           <FormikComponent />
         </FormWrapper>
+        <ShowListBtn to="/messages-list">
+          <ListSymbol />
+          <P>Show messages list</P>
+        </ShowListBtn>
       </IndexWrapper>
       <FooterComponent>
         <FooterSign>made with</FooterSign><HeartSymbol /><FooterSign>by rackowsky</FooterSign>

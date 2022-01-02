@@ -10,6 +10,7 @@ export const SymbolForm = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: ${({ isMessage }) => isMessage ? '45%' : '37%'};
+    margin-left: ${({ isMessage }) => isMessage ? '5px' : '0'};
 `
 export const Input = styled.input`
     background-color: transparent;
@@ -22,6 +23,7 @@ export const Input = styled.input`
     color: white;
     border: none;
     outline: none;
+    margin-left: -5px;
 
     ::placeholder {
         color: white;
@@ -74,6 +76,7 @@ export const Button = styled.button`
         transition: 0.2s;
         background-color: #ffffff3e;
         cursor: pointer;
+        transform: scale(1.025);
     }
 `
 export const SendSymbol = styled.div`
