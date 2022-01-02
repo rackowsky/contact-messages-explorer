@@ -28,6 +28,7 @@ export const CreateGlobalStyleElement = createGlobalStyle`
     select:-webkit-autofill:focus {
         border: 1px solid transparent;
         -webkit-text-fill-color: none;
+        box-shadow: 0 0 0px 1000px transparent inset;
         -webkit-box-shadow: 0 0 0px 1000px transparent inset;
     }
     ::-webkit-scrollbar {width: 5px;}
